@@ -2,10 +2,10 @@ export const Theme = {
     colors: {
         white: '#fff',
         text: '#000',
-        background: '#6B9275',
+        background: '#24186b',
         darkGreen: '#57695B',
         primary: "#9A9B9A",
-        secondary: '#464D48',
+        secondary: '#150573',
         effects:  'green',
         accent: 'orange',
         muted: 'RGBA(0,0,0,0.85)',
