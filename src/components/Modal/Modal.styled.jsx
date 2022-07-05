@@ -15,7 +15,7 @@ export const StyledModal = styled('div')`
     position: absolute;
     top: 50%;
     left: 50%;
-    min-height: 300px;
+    max-height: calc(100vh - 60px);
     max-width: 300px;
     width: 100%;
     padding: ${p => p.padding || 0}px;

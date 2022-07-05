@@ -1,6 +1,5 @@
 import { Box } from 'components/Box';
 import { ThreeDots  } from  'react-loader-spinner'
-// import styled from 'styled-components';
 
 export const Loader = () => {
     return (
@@ -11,8 +10,7 @@ export const Loader = () => {
             <ThreeDots   
             height="100"
             width="100"
-            color='green'
-            secondaryColor='red'
+            color='dark-gold'
             ariaLabel='loading'
         />
         </Box>

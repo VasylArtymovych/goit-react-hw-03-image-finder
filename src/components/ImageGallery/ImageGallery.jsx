@@ -3,9 +3,9 @@ import {List} from './ImageGallery.styled';
 
 export const ImageGallery = ({images, onImgClick})=>{
     return (
-        <List id='galery'>
+        <List >
             {images.map(({id, tags, webformatURL, largeImageURL}) => (
-                <ImageGalleryItem 
+                <ImageGalleryItem
                 key={id}
                 tag={tags} 
                 imageUrl={webformatURL} 

@@ -6,6 +6,7 @@ import { Loader } from "components/Loader";
 import { Button } from "components/Button";
 import { Modal } from "components/Modal";
 import { Title } from "components/Title";
+import * as Scroll from 'react-scroll';
 
 const BASE_URL = 'https://pixabay.com/api/?';
 const params = new URLSearchParams({
@@ -36,7 +37,7 @@ class App extends Component {
 
         const response = await fetch(BASE_URL + `q=${name}&page=${page}&` + params);
         const data = await response.json();
-        const images = data.hits;
+        const images = data.hits.map(({id, tags, webformatURL,      largeImageURL } ) => ({id, tags, webformatURL, largeImageURL}));
         const totalImages = data.totalHits;
         
         if(images.length === 0){
@@ -45,19 +46,13 @@ class App extends Component {
           this.setState((state) => ({images: [...state.images, ...images],  totalImages, status: 'resolve'}));
         }
       } catch (error) {
-        console.log(error);
+        alert(error);
       }
     }
   }
 
   handleSubmit = async (name) => {
     this.setState({name, page: 1, images: []});
-  }
-
-  loadMore = ()=>{
-    this.setState((state) => ({
-      page: state.page + 1
-    }));
   }
 
   toggleModal = () => {
@@ -69,7 +64,18 @@ class App extends Component {
     this.toggleModal();
   }
 
-  scrollPage = () => {}
+  loadMore = ()=>{
+    this.setState((state) => ({
+      page: state.page + 1
+    }));
+    this.scrollPage();
+  }
+
+  scrollPage = () => {
+    const element = document.querySelector('#card');
+    const height = element.offsetHeight;
+    Scroll.animateScroll.scrollMore(height * 2);
+  }
 
   render() {
     const {images, status, name, totalImages, page, isModalShown, largeImageUrl, tag} = this.state;
@@ -86,7 +92,6 @@ class App extends Component {
         />}
         {status === 'rejected' && <Title>Didn't find images with name: {name}</Title>}
         {status === 'resolve' && page < countPages && <Button 
-        onScroll={this.scrollPage} 
         onClick={this.loadMore}
         />}
         {isModalShown && largeImageUrl && <Modal 
