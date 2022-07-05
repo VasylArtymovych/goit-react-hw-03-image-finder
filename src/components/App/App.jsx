@@ -70,20 +70,27 @@ class App extends Component {
     }));
     if(this.state.status === 'resolve'){
       this.scrollPage();
-    }
-    
+    };
   }
 
   scrollPage = () => {
     const element = document.querySelector('#card');
     const height = element.offsetHeight;
     Scroll.animateScroll.scrollMore(height * 2, {
-      smooth: 'easeInOutQuint',
+      smooth: 'linear',
     });
   }
 
   render() {
-    const {images, status, name, totalImages, page, isModalShown, largeImageUrl, tag} = this.state;
+    const {
+      images, 
+      status, 
+      name, 
+      totalImages, 
+      page, 
+      isModalShown, 
+      largeImageUrl, 
+      tag } = this.state;
     const countPages = Math.ceil(totalImages/12);
   
     return (

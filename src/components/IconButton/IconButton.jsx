@@ -15,5 +15,6 @@ export const IconButton = styled.button.attrs(p => ({
     color: ${p => p.color || p.theme.colors.text };
     border: none;
     outline: none;
+    cursor: pointer;
 `;
 
