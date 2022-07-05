@@ -68,7 +68,10 @@ class App extends Component {
     this.setState((state) => ({
       page: state.page + 1
     }));
-    this.scrollPage();
+    if(this.state.status === 'resolve'){
+      this.scrollPage();
+    }
+    
   }
 
   scrollPage = () => {
