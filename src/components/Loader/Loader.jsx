@@ -1,5 +1,5 @@
 import { Box } from 'components/Box';
-import { Bars,Grid,ThreeDots  } from  'react-loader-spinner'
+import { ThreeDots  } from  'react-loader-spinner'
 // import styled from 'styled-components';
 
 export const Loader = () => {
