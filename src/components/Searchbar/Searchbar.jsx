@@ -1,7 +1,9 @@
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import { StyledForm, Input, Button, ErrorText, Header } from './Searchbar.styled';
 import {BsSearch} from 'react-icons/bs';
+import PropTypes from 'prop-types';
+import { StyledForm, Input, Button, ErrorText, Header } from './Searchbar.styled';
+
 
 const schema = yup.object().shape({
     searchText: yup.string().min(3).trim().required(),
@@ -41,3 +43,6 @@ export const Searchbar = ({onSubmit})=>{
     )
 };
 
+Searchbar.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+};

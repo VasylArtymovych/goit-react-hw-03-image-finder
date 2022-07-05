@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-// export const IconButton = ({children, onClick, ...restProps}) => (
-//     <Button onClick={onClick} {...restProps}>{children}</Button>
-// );
-
-
 export const IconButton = styled.button.attrs(p => ({
     type: p.type || 'button',
     
@@ -21,3 +16,4 @@ export const IconButton = styled.button.attrs(p => ({
     border: none;
     outline: none;
 `;
+
