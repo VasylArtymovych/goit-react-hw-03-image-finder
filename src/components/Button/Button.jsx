@@ -1,8 +1,7 @@
-import { StyledBtn } from "./Button.styled"
+import { StyledButton } from "./Button.styled"
 
 export const Button = ({onClick, onScroll}) => {
-    onScroll()
     return (
-        <StyledBtn onClick={onClick}>Load more</StyledBtn>
+        <StyledButton onClick={onClick}>Load more</StyledButton>
     )
 }

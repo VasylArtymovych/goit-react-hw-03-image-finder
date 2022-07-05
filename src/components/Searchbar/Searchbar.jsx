@@ -26,7 +26,6 @@ export const Searchbar = ({onSubmit})=>{
             <StyledForm autoComplete="off">
                 <Button type="submit">
                     <BsSearch size={22}/>
-                {/* <span >Search</span> */}
                 </Button>
 
                 <Input

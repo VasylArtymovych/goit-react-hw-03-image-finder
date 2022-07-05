@@ -1,11 +1,11 @@
 import {Item, Img} from './ImageGalleryItem.styled';
 
 
-export const ImageGalleryItem = ({id, imageUrl, largeImageUrl }) => {
+export const ImageGalleryItem = ({tag, imageUrl, largeImageUrl, onImgClick }) => {
 
     return (
         <Item >
-            <Img onClick={()=>{console.log('Img cLick');}} src={imageUrl} alt="images" />
+            <Img onClick={()=>{onImgClick(largeImageUrl, tag)}} src={imageUrl} alt={tag} />
         </Item>
     );
 };
