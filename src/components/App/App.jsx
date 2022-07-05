@@ -74,7 +74,9 @@ class App extends Component {
   scrollPage = () => {
     const element = document.querySelector('#card');
     const height = element.offsetHeight;
-    Scroll.animateScroll.scrollMore(height * 2);
+    Scroll.animateScroll.scrollMore(height * 2, {
+      smooth: 'easeInOutQuint',
+    });
   }
 
   render() {
@@ -93,7 +95,7 @@ class App extends Component {
         {status === 'rejected' && <Title>Didn't find images with name: {name}</Title>}
         {status === 'resolve' && page < countPages && <Button 
         onClick={this.loadMore}
-        />}
+        />  }
         {isModalShown && largeImageUrl && <Modal 
         close={this.toggleModal}
         >
